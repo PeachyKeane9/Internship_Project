@@ -14,8 +14,8 @@ class SignInPage(BasePage):
 
     #credientials
     LOG_IN_PAGE_URL = 'https://soft.reelly.io/sign-in'
-    EMAIL = 'velot131@gmail.com'
-    PASSWORD ='Mynewpassword!12'
+    EMAIL = "****"
+    PASSWORD ="***"
 
     def log_in(self):
         # Wait for page to load
