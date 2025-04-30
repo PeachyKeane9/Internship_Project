@@ -14,12 +14,14 @@ class SignInPage(BasePage):
 
     #credientials
     LOG_IN_PAGE_URL = 'https://soft.reelly.io/sign-in'
-    EMAIL = "****"
-    PASSWORD ="***"
+    EMAIL =
+    PASSWORD =
 
     def log_in(self):
         # Wait for page to load
         WebDriverWait(self.driver, 10).until(EC.url_to_be(self.LOG_IN_PAGE_URL))
+        sleep(10)
+
 
         # Enter email
         email_field = self.find_element(self.EMAIL_FIELD)
