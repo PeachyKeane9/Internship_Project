@@ -31,6 +31,7 @@ class SecondaryListingsPage(BasePage):
                 print("Last page has been reached")
                 break
             self.wait_and_click(self.NEXT_PAGE_BTN)
+            sleep(5)
 
     def retreat_first_page(self):
         for _ in range(134):

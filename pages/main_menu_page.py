@@ -8,9 +8,9 @@ from time import sleep
 
 class  MainMenuPage(BasePage):
     #Locators
-    SECONDARY_TAB = (By.ID, "w-node-_99a5c496-8f77-9959-16dd-e8eb9b22b697-9b22b68b")
+    SECONDARY_TAB = (By.XPATH, '//a[.//div[@class="g-menu-text" and text()="Secondary"]]')
 
 
     def click_secondary_tab(self):
-        sleep(10)
+        sleep(5)
         self.wait_and_click(self.SECONDARY_TAB)

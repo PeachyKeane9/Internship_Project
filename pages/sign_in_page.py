@@ -8,19 +8,19 @@ from time import sleep
 
 class SignInPage(BasePage):
     #Locators
-    EMAIL_FIELD = (By.ID, "email-2")
-    PASSWORD_FIELD = (By.ID, "field")
+    EMAIL_FIELD = (By.XPATH, '//div[@class="flex-row-center-2"]//input[@data-name="Email 2"]')
+    PASSWORD_FIELD = (By.XPATH, '//input[@data-name="Password"]')
     LOG_IN_BUTTON = (By.CSS_SELECTOR, 'a[wized="loginButton"]')
 
     #credientials
     LOG_IN_PAGE_URL = 'https://soft.reelly.io/sign-in'
-    EMAIL =
-    PASSWORD =
+    EMAIL = 'velot131@gmail.com'
+    PASSWORD = 'Mynewpassword!12'
 
     def log_in(self):
         # Wait for page to load
         WebDriverWait(self.driver, 10).until(EC.url_to_be(self.LOG_IN_PAGE_URL))
-        sleep(10)
+        sleep(5)
 
 
         # Enter email
