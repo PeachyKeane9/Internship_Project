@@ -20,13 +20,13 @@ def browser_init(context):
     :param context: Behave context
     """
     # CHROME
-    # options = ChromeOptions()
-    # options.add_argument("--no-sandbox")
-    # options.add_argument("--disable-dev-shm-usage")
-    # driver_path = ChromeDriverManager().install()
-    # service = ChromeService(driver_path)
-    # context.driver = webdriver.Chrome(service=service, options=options)
-    # context.driver.maximize_window()  # Non-headless: maximize window
+    options = ChromeOptions()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    driver_path = ChromeDriverManager().install()
+    service = ChromeService(driver_path)
+    context.driver = webdriver.Chrome(service=service, options=options)
+    context.driver.maximize_window()  # Non-headless: maximize window
 
     # # # FIREFOX
     # driver_path = GeckoDriverManager().install()
@@ -63,23 +63,23 @@ def browser_init(context):
 
 
 ## BROWSERSTACK##
-
-    bs_user ='josephkeane_uvU5JP'
-    bs_key = 'p75kJPb2bRt3Wg7C7yYC'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        "os" : "Windows",
-        "osVersion" : "10",
-        'browserName': 'Chrome',
-
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
-    context.driver.maximize_window()
-    context.driver.implicitly_wait(4)
-    context.driver.wait = WebDriverWait(context.driver, 15)
+    #
+    # bs_user ='josephkeane_uvU5JP'
+    # bs_key = 'p75kJPb2bRt3Wg7C7yYC'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     "os" : "Windows",
+    #     "osVersion" : "10",
+    #     'browserName': 'Chrome',
+    #
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
+    # context.driver.maximize_window()
+    # context.driver.implicitly_wait(4)
+    # context.driver.wait = WebDriverWait(context.driver, 15)
 
     context.app = Application(context.driver)
 

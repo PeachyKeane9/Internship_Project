@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+from support.logger import logger
 from pages.base_page import BasePage
 from time import sleep
 
@@ -19,6 +20,7 @@ class SignInPage(BasePage):
 
     def log_in(self):
         # Wait for page to load
+        logger.info(f'')
         WebDriverWait(self.driver, 10).until(EC.url_to_be(self.LOG_IN_PAGE_URL))
         sleep(5)
 
