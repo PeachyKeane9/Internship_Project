@@ -18,4 +18,3 @@ class Application:
         self.main_menu_page = MainMenuPage(driver)
         self.secondary_listings_page = SecondaryListingsPage(driver)
         # self.search_results_page = SearchResultsPage(driver)
-        # self.sign_in_page = SignInPage(driver)

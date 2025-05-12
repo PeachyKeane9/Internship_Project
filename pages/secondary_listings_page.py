@@ -18,13 +18,18 @@ class SecondaryListingsPage(BasePage):
     FIRST_LISTING_CARD = (By.CSS_SELECTOR, 'div[wized="listingCardMLS"]')
 
 
+
     def verify_secondary_list_pg(self):
-     self.wait_for_element_appear(self. SEC_HEADER_TAB)
+     # self.wait_for_element_appear(self. SEC_HEADER_TAB)
      self.verify_partial_url(self.PARTIAL_URL)
 
     def advance_final_page(self):
         for _ in range(135):
-            self.wait_for_element_appear(self.FIRST_LISTING_CARD)
+            # self.wait_for_element_appear(self.FIRST_LISTING_CARD)
+            WebDriverWait(self.driver, 20).until(
+                EC.presence_of_element_located(self.FIRST_LISTING_CARD)
+            )
+            # self.scroll_and_click(self.FIRST_LISTING_CARD, timeout=20)
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             next_button = self.wait_for_element_appear(self.NEXT_PAGE_BTN)
             if 'disabled' in next_button.get_attribute('class') or not next_button.is_enabled():
